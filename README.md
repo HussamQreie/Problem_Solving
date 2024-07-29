@@ -24,5 +24,20 @@
 
 ## Ideas
 
+- Top 100 Liked Questions
+
+1) Two sum (brute force solution)
+ - Question idea: Return indicies of 2 numbers from an array when add them up it equal target(integer) value
+ - Solution idea:
+ - Class -> contains the solution
+ - function -> contains the solution process
+ - function parameters ->
+ - -> `self` -> class instance(object) parameter -> everything it points to is related to the class dirctly not local(not - 
+ linked) method/attribute, use case (instance, Calling  Methods, Modifying Instance Variables)
+ - -> `nums: List[int]` ->  parameter representing a list of integers.
+ - -> `target: int` -> parameter representing an integer value.
+ - -> `List[int]` -> parameter specifies the return type of the method, which is parameter 1 of type list of integers
+
 
   
+![blob](https://github.com/user-attachments/assets/6d02fab8-2b9e-479a-83e5-7a81d82333c2)
