@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring> // Required for strlen()
 using namespace std;
 void Max_Min_in_1d_array() {
 	
@@ -27,7 +28,7 @@ void Max_Min_in_1d_array() {
 
 	
 }
-void Add_in_2d_array() { // I'll undrstand it later...'
+void Add_in_2d_array() {  
 	int size;
 	
 	// User inputs matrix size
@@ -69,9 +70,54 @@ void Add_in_2d_array() { // I'll undrstand it later...'
 	}
 	
 }
+void Count_Vowels_and_Consonants_in_string() {
+	char pattern[100]; // Increased size to avoid overflow
+	cout << "Enter a string: ";
+	cin.getline(pattern, 100); // This will read only one word. Use `cin.getline(pattern, 100);` for full sentences.
+	
+	int count_v = 0, count_c = 0;
+	
+	for (int i = 0; i < int(strlen(pattern)); i++) {
+		char ch = tolower(pattern[i]); // Convert to lowercase to simplify condition
+		if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+			count_v++;
+			cout << "Vowel added!" << endl<<endl;
+		} 
+		
+		else if (isalpha(ch)) { // Check if it is a letter
+			count_c++;
+			cout << "Consonant added!" << endl<<endl;
+		}
+	}
+	
+	cout << "Vowels: " << count_v << endl;
+	cout << "Consonants: " << count_c << endl;
+}
+void Reverse_String() {
+	char str[100]; // String array to store input
+	
+	cout << "Enter a string: ";
+	cin.getline(str, 100); // Allows multi-word input
+	
+	int start = 0, end = strlen(str) - 1;
+	
+	// Recursive function to reverse the string
+	auto reverseString = [&](auto&& self, int start, int end) -> void {
+		if (start >= end) // Base case
+			return;
+		swap(str[start], str[end]); // Swap characters
+		self(self, start + 1, end - 1); // Recursive call
+	};
+	
+	reverseString(reverseString, start, end); // Call recursion
+	
+	cout << "Reversed string: " << str << endl;
+}
 int main() {
 
 //	Max_Min_in_1d_array();
 //  Add_in_2d_array();
+//  Count_Vowels_and_Consonants_in_string();
+//  Reverse_String();
 }
 
